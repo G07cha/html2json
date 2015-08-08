@@ -1,0 +1,1 @@
+Simple javascript tool that convert html page to JSON string that can be used as object in future
