@@ -9,7 +9,7 @@ var downloader = require('./lib/downloader'),
 program
     .version('0.1.0')
     .option('-c --console', 'Log result to console')
-    .option('-o --output', 'Set output file(output.json by default)')
+    .option('-o --output [filename]', 'Set output file(output.json by default)')
     .option('-v --verbose', 'Add verbose logging')
     .command('parse [website]')
     .description('Parse provided website')
@@ -18,9 +18,18 @@ program
     .action(function(website, options) {
         var response = downloader.downloadPage(website);
         var result = converter.convertToJSON(response);
-        if(options.console) {
+        var filename = "output.json";
+    
+        if(program.console) {
             console.log(result);
-        } 
+            return true;
+        } else if (program.output) {
+            filename = program.output;
+        }
+        
+        fs.writeFile(filename, result, function(err) {
+            (err) ? console.error(err) : console.log('Saved succesfully');
+        });
     });
 
 // Examples
