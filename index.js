@@ -37,8 +37,8 @@ program
 program.on('--help', function(){
     console.log('  Examples:');
     console.log('');
-    console.log('    html2json www.google.com');
-    console.log('    html2json -o google.json www.google.com');
+    console.log('    html2json https://google.com');
+    console.log('    html2json -o google.json https://google.com');
     console.log('');
 });
 
