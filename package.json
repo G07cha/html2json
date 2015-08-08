@@ -1,0 +1,28 @@
+{
+  "name": "html2json",
+  "version": "0.1.0",
+  "description": "Convert html to json string",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/G07cha/html2json.git"
+  },
+  "keywords": [
+    "html",
+    "json",
+    "convert"
+  ],
+  "author": "G07cha",
+  "license": "ISC",
+  "bugs": {
+      "url": "https://github.com/G07cha/html2json/issues"
+  },
+    "homepage": "https://github.com/G07cha/html2json#readme",
+  "dependencies": {
+    "commander": "^2.8.1",
+    "xmlhttprequest": "^1.7.0"
+  }
+}
