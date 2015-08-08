@@ -2,7 +2,8 @@
 
 var downloader = require('./lib/downloader'),
     converter  = require('./lib/converter'),
-    program    = require('commander');
+    program    = require('commander'),
+    fs         = require('fs');
 
 //Basic help
 program
