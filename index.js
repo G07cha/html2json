@@ -17,11 +17,11 @@ program
     //Main function
     .action(function(website, options) {
         var response = downloader.downloadPage(website);
-        var result = converter.convertToJSON(response);
+        var result = converter.convertToJSON(response, program.verbose);
         var filename = "output.json";
     
         if(program.console) {
-            console.log(result);
+            console.log(JSON.stringify(result));
             return true;
         } else if (program.output) {
             filename = program.output;

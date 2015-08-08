@@ -18,11 +18,12 @@
   "author": "G07cha",
   "license": "ISC",
   "bugs": {
-      "url": "https://github.com/G07cha/html2json/issues"
+    "url": "https://github.com/G07cha/html2json/issues"
   },
-    "homepage": "https://github.com/G07cha/html2json#readme",
+  "homepage": "https://github.com/G07cha/html2json#readme",
   "dependencies": {
     "commander": "^2.8.1",
+    "underscore": "^1.8.3",
     "xmlhttprequest": "^1.7.0"
   }
 }
