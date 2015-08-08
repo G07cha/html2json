@@ -23,7 +23,8 @@ program
         if(program.console) {
             console.log(JSON.stringify(result));
             return true;
-        } else if (program.output) {
+        }
+        if (program.output) {
             filename = program.output;
         }
         
