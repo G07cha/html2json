@@ -15,22 +15,26 @@ program
     .description('Parse provided website')
 
     //Main function
-    .action(function(website, options) {
+    .action(function(website) {
         var response = downloader.downloadPage(website);
-        var result = converter.convertToJSON(response, program.verbose);
+        var result = JSON.stringify(converter.convertToJSON(response, program.verbose), null, 2);
         var filename = "output.json";
     
         if(program.console) {
-            console.log(JSON.stringify(result));
+            console.log(result);
             return true;
         }
         if (program.output) {
             filename = program.output;
         }
         
-        fs.writeFile(filename, result, function(err) {
-            (err) ? console.error(err) : console.log('Saved succesfully');
-        });
+        fs.writeFileSync(filename, result)//, function(err) {
+//            if(err) {
+//                console.error(err);
+//            } else {
+//                console.log("Saved JSON to " + filename)
+//            }
+//        });
     });
 
 // Examples
