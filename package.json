@@ -4,7 +4,7 @@
   "description": "Convert html to json string",
   "main": "index.js",
   "scripts": {
-    "test": "npm i -g mocha && mocha"
+    "test": "if [ $(which mocha) ]; then echo 'Mocha installed'; else npm install -g mocha && mocha; fi"
   },
   "repository": {
     "type": "git",

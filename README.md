@@ -5,9 +5,9 @@ Simple javascript tool that convert html page to JSON string that can be used as
 ##Usage
 Just provide parse with link to website and arguments if needed. By default will parse and save result to 'output.json' file
 ```bash
-❯ ./index.js
+❯ html2json
 
-Usage: index [options] [command]
+Usage: html2json [options] [command]
 
 
 Commands:
