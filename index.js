@@ -5,38 +5,35 @@ var downloader = require('./lib/downloader'),
     program    = require('commander'),
     fs         = require('fs');
 
-//Basic help
+//Help topic
 program
     .version('0.1.0')
-    .option('-c --console', 'Log result to console')
     .option('-o --output [filename]', 'Set output file(output.json by default)')
     .option('-v --verbose', 'Add verbose logging')
-    .command('parse [website]')
+    .option('-q --quiet', 'Do not display output to console')
     .description('Parse provided website')
 
     //Main function
     .action(function(website) {
         var response = downloader.downloadPage(website);
         var result = JSON.stringify(converter.convertToJSON(response, program.verbose), null, 2);
-        var filename = "output.json";
-    
-        if(program.console) {
-            console.log(result);
-            return true;
-        }
+        
         if (program.output) {
-            filename = program.output;
+            var filename = (program.output) ? program.output : "output.json";
+            fs.writeFileSync(filename, result);
         }
         
-        fs.writeFileSync(filename, result);
+        if(program.quiet === undefined) {
+            console.log(result);
+        }
     });
 
 // Examples
 program.on('--help', function(){
     console.log('  Examples:');
     console.log('');
-    console.log('    html2json https://google.com');
-    console.log('    html2json -o google.json https://google.com');
+    console.log('    html2json https://google.com   #parse and display output ');
+    console.log('    html2json -o google.json https://google.com    #parse and save output to google.json');
     console.log('');
 });
 

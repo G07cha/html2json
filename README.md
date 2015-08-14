@@ -7,23 +7,20 @@ Just provide parse with link to website and arguments if needed. By default will
 ```bash
 ❯ html2json
 
-Usage: html2json [options] [command]
+  Usage: index [options]
 
+  Parse provided website
 
-Commands:
+  Options:
 
-parse [website]  Parse provided website
+    -h, --help              output usage information
+    -V, --version           output the version number
+    -o --output [filename]  Set output file(output.json by default)
+    -v --verbose            Add verbose logging
+    -q --quiet              Do not display output to console
 
-Options:
+  Examples:
 
--h, --help              output usage information
--V, --version           output the version number
--c --console            Log result to console
--o --output [filename]  Set output file(output.json by default)
--v --verbose            Add verbose logging
-
-Examples:
-
-html2json https://google.com
-html2json -o google.json https://google.com
+    html2json https://google.com   #parse and display output 
+    html2json -o google.json https://google.com    #parse and save output to google.json
 ```
