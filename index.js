@@ -28,13 +28,7 @@ program
             filename = program.output;
         }
         
-        fs.writeFileSync(filename, result)//, function(err) {
-//            if(err) {
-//                console.error(err);
-//            } else {
-//                console.log("Saved JSON to " + filename)
-//            }
-//        });
+        fs.writeFileSync(filename, result);
     });
 
 // Examples
@@ -52,3 +46,11 @@ program.parse(process.argv);
 if (!process.argv.slice(2).length) {
     program.outputHelp();
 }
+
+//Export module
+module.exports = {
+    convertPage: function(page) {
+        var response = downloader.downloadPage(page);
+        return JSON.stringify(converter.convertToJSON(response, program.verbose), null, 2);
+    }
+};
