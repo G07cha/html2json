@@ -3,8 +3,12 @@
   "version": "0.1.0",
   "description": "Convert html to json string",
   "main": "index.js",
+  "bin": {
+    "html2json": "./index.js"
+  },
   "scripts": {
-    "test": "if [ $(which mocha) ]; then echo 'Mocha installed'; else npm install -g mocha && mocha; fi"
+    "test": "if [ $(which mocha) ]; then echo 'Mocha installed' && mocha; else npm install -g mocha && mocha; fi",
+    "lint": "jshint . --exclude node_modules"
   },
   "repository": {
     "type": "git",
