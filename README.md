@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/G07cha/html2json.svg?branch=master)](https://travis-ci.org/G07cha/html2json)
-
+[![Code Climate](https://codeclimate.com/github/G07cha/html2json/badges/gpa.svg)](https://codeclimate.com/github/G07cha/html2json)
+[![Test Coverage](https://codeclimate.com/github/G07cha/html2json/badges/coverage.svg)](https://codeclimate.com/github/G07cha/html2json/coverage)
 Simple javascript tool that convert html page to JSON string that can be used as object in future
 
 ##Usage
@@ -7,7 +8,7 @@ Just provide parse with link to website and arguments if needed. By default will
 ```bash
 ❯ html2json
 
-  Usage: index [options]
+  Usage: html2json [options]
 
   Parse provided website
 
