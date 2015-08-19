@@ -1,3 +1,10 @@
 language: node_js
 node_js:
 - "stable"
+
+addons:
+  code_climate:
+	repo_token:9416b62f5babf70b10b8b01c517e5664e6f63b49b4d71076607ccb84ab4c1c84
+
+after_script:
+  - codeclimate-test-reporter < lcov.info
