@@ -29,9 +29,9 @@ describe('html2json', function() {
         it('should save response to file and display in console', function(done) {
             exec('rm output.json', function(error, stdout, stderr) {
                 exec('./index.js -o output.json https://google.com', function(error, stdout, stderr) {
-                    exec("ls -lAh | grep output.json | cut -d' ' -f6", function(error, stdout, stderr) {
+                    exec("ls -lAh | grep output.json", function(error, stdout, stderr) {
                         
-                        assert.equal(stdout, '263\n', "Output file don't found or have incorrect size");
+                        assert(stdout.indexOf('263') > -1, "Output file don't found or have incorrect size");
                         
                         //Cleaning if assertion passed
                         exec('rm output.json', function(error, stdout, stderr) {
@@ -46,8 +46,8 @@ describe('html2json', function() {
         it('should save response to file', function(done) {
             exec('rm silent.json', function(error, stdout, stderr) {
                 exec('./index.js -o silent.json -q https://google.com', function(error, stdout, stderr) {
-                    exec("ls -lAh | grep silent.json | cut -d' ' -f6", function(error, stdout, stderr) {
-                        assert.equal(stdout, '263\n', "Output file don't found or have incorrect size");
+                    exec("ls -lAh | grep silent.json", function(error, stdout, stderr) {
+                        assert(stdout.indexOf('263') > -1, "Output file don't found or have incorrect size");
                         
                         //Cleaning if assertion passed
                         exec('rm silent.json', function(error, stdout, stderr) {
