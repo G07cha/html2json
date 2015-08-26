@@ -7,7 +7,8 @@
     "html2json": "./index.js"
   },
   "scripts": {
-    "test": "if [ $(which mocha) ]; then echo 'Mocha installed' && mocha; else npm install -g mocha && mocha; fi",
+    "test": "if [ $(which mocha) ]; then echo 'Mocha installed' && mocha; else npm i -g mocha && mocha; fi",
+    "coverage": "npm i -g istanbul codecov.io && istanbul cover _mocha && cat ./coverage/coverage.json | codecov",
     "lint": "jshint . --exclude node_modules"
   },
   "repository": {
