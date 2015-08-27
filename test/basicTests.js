@@ -19,13 +19,6 @@ describe('html2json', function() {
             });
         });
         
-        it('should display output with verbose logging', function(done) {
-            exec('./index.js -v https://gdfggs.com', function(error, stdout, stderr) {
-                assert(stdout.indexOf('Source:') > -1, "Verbose output don't appear in console, recieved: " + stdout);
-                done();
-            });
-        });
-        
         it('should save response to file and display in console', function(done) {
             exec('rm output.json', function(error, stdout, stderr) {
                 exec('./index.js -o output.json https://google.com', function(error, stdout, stderr) {
