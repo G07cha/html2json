@@ -9,14 +9,13 @@ var downloader = require('./lib/downloader'),
 program
     .version('0.1.0')
     .option('-o --output [filename]', 'Set output file(output.json by default)')
-    .option('-v --verbose', 'Add verbose logging')
     .option('-q --quiet', 'Do not display output to console')
     .description('Parse provided website')
 
     //Main function
     .action(function(website) {
         var response = downloader.downloadPage(website);
-        var result = JSON.stringify(converter.convertToJSON(response, program.verbose), null, 2);
+        var result = JSON.stringify(converter.convertToJSON(response), null, 2);
         
         if (program.output) {
             var filename = (program.output) ? program.output : "output.json";

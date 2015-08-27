@@ -18,7 +18,6 @@ Just provide parse with link to website and arguments if needed. By default will
     -h, --help              output usage information
     -V, --version           output the version number
     -o --output [filename]  Set output file(output.json by default)
-    -v --verbose            Add verbose logging
     -q --quiet              Do not display output to console
 
   Examples:
