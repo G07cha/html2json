@@ -30,8 +30,7 @@ describe('html2json', function() {
             exec('rm output.json', function(error, stdout, stderr) {
                 exec('./index.js -o output.json https://google.com', function(error, stdout, stderr) {
                     exec("ls -lAh | grep output.json", function(error, stdout, stderr) {
-                        
-                        assert(stdout.indexOf('263') > -1, "Output file don't found or have incorrect size");
+                        assert(stdout.indexOf('301') > -1, "Output file don't found or have incorrect size");
                         
                         //Cleaning if assertion passed
                         exec('rm output.json', function(error, stdout, stderr) {
@@ -47,7 +46,7 @@ describe('html2json', function() {
             exec('rm silent.json', function(error, stdout, stderr) {
                 exec('./index.js -o silent.json -q https://google.com', function(error, stdout, stderr) {
                     exec("ls -lAh | grep silent.json", function(error, stdout, stderr) {
-                        assert(stdout.indexOf('263') > -1, "Output file don't found or have incorrect size");
+                        assert(stdout.indexOf('301') > -1, "Output file don't found or have incorrect size");
                         
                         //Cleaning if assertion passed
                         exec('rm silent.json', function(error, stdout, stderr) {
