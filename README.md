@@ -21,7 +21,10 @@ Just provide parse with link to website and arguments if needed. By default will
     -q --quiet              Do not display output to console
 
   Examples:
-
-    html2json https://google.com   #parse and display output 
-    html2json -o google.json https://google.com    #parse and save output to google.json
+  
+    #parse and display output 
+    html2json https://google.com
+    
+    #parse and save output to google.json
+    html2json -o google.json https://google.com
 ```

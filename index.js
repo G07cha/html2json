@@ -30,10 +30,10 @@ program
 // Examples
 program.on('--help', function(){
     console.log('  Examples:');
-    console.log('');
-    console.log('    html2json https://google.com   #parse and display output ');
-    console.log('    html2json -o google.json https://google.com    #parse and save output to google.json');
-    console.log('');
+    console.log('\n    #parse and display output');
+    console.log('    html2json https://google.com\n');
+    console.log('    #parse and save output to google.json');
+    console.log('    html2json -o google.json https://google.com\n');
 });
 
 
